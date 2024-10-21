@@ -41,7 +41,7 @@ public class GlobalColorManager : MonoBehaviour
 
     // Start
     //--------------------------------------//
-    void Start()
+    void Awake()
     //--------------------------------------//
     {
         InitSingleton();
