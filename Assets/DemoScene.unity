@@ -21376,7 +21376,7 @@ MonoBehaviour:
   onBreak:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 63473336}
+      - m_Target: {fileID: 2079909590}
         m_TargetAssemblyTypeName: EventActionLogger, VERA
         m_MethodName: LogEvent
         m_Mode: 3
