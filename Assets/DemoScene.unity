@@ -4403,7 +4403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2bb8a5b4db33554d8a5c6b836a05966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactableName: 
+  interactableName: Door
   interactions:
   - interactionName: Open/Close
     onTriggerInteraction:
@@ -11062,8 +11062,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1065715540}
+  - component: {fileID: 1065715541}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: XRInitializer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11077,13 +11078,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065715539}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.524, y: 22.372, z: 20.796}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000015258789, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1065715541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065715539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669aaa9e5e0912e4686060ec82a64e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1066566349
 GameObject:
   m_ObjectHideFlags: 0
@@ -13336,7 +13349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63c53de868b28941947d5fedf7fe7ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  API_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YzY4Y2E3MjQwNWI0MDA1ZjA5OGM2NSIsImZpcnN0TmFtZSI6IkNvcmV5IiwibGFzdE5hbWUiOiJDbGVtZW50cyIsImVtYWlsIjoiY280MzAwMTVAdWNmLmVkdSIsImlhdCI6MTcyOTUzMjUyOSwiZXhwIjoxNzI5NTYxMzI5fQ.VPq5nj7W-6R3p5EvtauQzOMyRzqeMAaWXh81cP-zyWI
+  API_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YzY4Y2E3MjQwNWI0MDA1ZjA5OGM2NSIsImZpcnN0TmFtZSI6IkNvcmV5IiwibGFzdE5hbWUiOiJDbGVtZW50cyIsImVtYWlsIjoiY280MzAwMTVAdWNmLmVkdSIsImlhdCI6MTcyOTcyNzY1MiwiZXhwIjoxNzI5NzU2NDUyfQ._hCdKX2SKwvitAgS7PF7VcUkFo950j1faAx6arvkb6o
   study_UUID: 671692d61d9ae3310c452738
   directoryPath: 
   filePath: 
@@ -23723,7 +23736,7 @@ Transform:
   m_GameObject: {fileID: 1717954560423644721}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.92387956, z: 0, w: 0.38268343}
-  m_LocalPosition: {x: 61.61, y: 21.42, z: 28.39}
+  m_LocalPosition: {x: 61.61, y: 22.22, z: 28.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28496,5 +28509,5 @@ SceneRoots:
   - {fileID: 604804290}
   - {fileID: 694284568}
   - {fileID: 1717954560423644722}
-  - {fileID: 1322616640}
   - {fileID: 1065715540}
+  - {fileID: 1322616640}

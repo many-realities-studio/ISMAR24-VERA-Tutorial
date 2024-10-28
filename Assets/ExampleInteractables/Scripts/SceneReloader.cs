@@ -8,6 +8,7 @@ public class SceneReloader : MonoBehaviour
     public void ReloadScene()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name);
+        //SceneManager.LoadScene(currentScene.name);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name).allowSceneActivation = true;
     }
 }

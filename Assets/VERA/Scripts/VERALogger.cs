@@ -461,13 +461,25 @@ private IEnumerator SubmitCSVCoroutine(string file)
           formattedValue = EscapeForCsv(value.ToString());
           break;
         case VERAColumnDefinition.DataType.JSON:
-          var json = JsonConvert.SerializeObject(value);
+          var json = JsonUtility.ToJson(value);
           formattedValue = EscapeForCsv(json);
           break;
         case VERAColumnDefinition.DataType.Transform:
           var transform = value as Transform;
           if (transform != null)
           {
+            // NEW JSON
+            var transformData = new TransformData
+            {
+              position = new Vector3Data(transform.position),
+              rotation = new QuaternionData(transform.rotation),
+              localScale = new Vector3Data(transform.localScale)
+            };
+
+            formattedValue = EscapeForCsv(JsonUtility.ToJson(transformData));
+
+            // OLD JSON
+            /*
             var settings = new JsonSerializerSettings
             {
               ReferenceLoopHandling = ReferenceLoopHandling.Ignore
@@ -479,6 +491,7 @@ private IEnumerator SubmitCSVCoroutine(string file)
               rotation = new { x = transform.rotation.x, y = transform.rotation.y, z = transform.rotation.z, w = transform.rotation.w },
               localScale = new { x = transform.localScale.x, y = transform.localScale.y, z = transform.localScale.z }
             }, settings));
+            */
           }
           break;
         default:
@@ -575,4 +588,49 @@ private IEnumerator SubmitCSVCoroutine(string file)
   {
     Flush();
   }
+
+    #region JSON Helper
+
+    [System.Serializable]
+    public class TransformData
+    {
+        public Vector3Data position;
+        public QuaternionData rotation;
+        public Vector3Data localScale;
+    }
+
+    [System.Serializable]
+    public class Vector3Data
+    {
+        public float x;
+        public float y;
+        public float z;
+
+        public Vector3Data(Vector3 vector)
+        {
+            x = vector.x;
+            y = vector.y;
+            z = vector.z;
+        }
+    }
+
+    [System.Serializable]
+    public class QuaternionData
+    {
+        public float x;
+        public float y;
+        public float z;
+        public float w;
+
+        public QuaternionData(Quaternion quaternion)
+        {
+            x = quaternion.x;
+            y = quaternion.y;
+            z = quaternion.z;
+            w = quaternion.w;
+        }
+    }
+
+    #endregion
+
 }

@@ -65,10 +65,10 @@ public class Lock : MonoBehaviour
         {
             // UNCOMMENT below lines to allow unlocking via VLAT controls
 
-            //GrabTracker grabTracker = FindObjectOfType<GrabTracker>();
+            GrabTracker grabTracker = FindObjectOfType<GrabTracker>();
 
-            //if (grabTracker.grabbedObject != null && grabTracker.grabbedObject.transform == linkedKey)
-            //    Unlock();
+            if (grabTracker.grabbedObject != null && grabTracker.grabbedObject.transform == linkedKey)
+                Unlock();
         }
 
     } // END TryUnlock
