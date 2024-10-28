@@ -4403,7 +4403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2bb8a5b4db33554d8a5c6b836a05966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactableName: 
+  interactableName: Door
   interactions:
   - interactionName: Open/Close
     onTriggerInteraction:
@@ -13349,7 +13349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63c53de868b28941947d5fedf7fe7ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  API_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YzY4Y2E3MjQwNWI0MDA1ZjA5OGM2NSIsImZpcnN0TmFtZSI6IkNvcmV5IiwibGFzdE5hbWUiOiJDbGVtZW50cyIsImVtYWlsIjoiY280MzAwMTVAdWNmLmVkdSIsImlhdCI6MTcyOTUzMjUyOSwiZXhwIjoxNzI5NTYxMzI5fQ.VPq5nj7W-6R3p5EvtauQzOMyRzqeMAaWXh81cP-zyWI
+  API_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YzY4Y2E3MjQwNWI0MDA1ZjA5OGM2NSIsImZpcnN0TmFtZSI6IkNvcmV5IiwibGFzdE5hbWUiOiJDbGVtZW50cyIsImVtYWlsIjoiY280MzAwMTVAdWNmLmVkdSIsImlhdCI6MTcyOTcyNzY1MiwiZXhwIjoxNzI5NzU2NDUyfQ._hCdKX2SKwvitAgS7PF7VcUkFo950j1faAx6arvkb6o
   study_UUID: 671692d61d9ae3310c452738
   directoryPath: 
   filePath: 

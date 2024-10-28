@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using Newtonsoft.Json;
 
 public class DemoSurveyManager : MonoBehaviour
 {
@@ -306,7 +305,7 @@ public class DemoSurveyManager : MonoBehaviour
         // Check for end screen
         if (currentQuestionIndex == activeSurvey.surveyQuestions.Count)
         {
-            string surveyResultsString = JsonConvert.SerializeObject(new {surveyQuestions = activeSurvey.surveyQuestions, surveyResults = surveyResults});
+            //string surveyResultsString = JsonConvert.SerializeObject(new {surveyQuestions = activeSurvey.surveyQuestions, surveyResults = surveyResults});
             Debug.Log(surveyResults);
             //VERALogger.Instance.CreateEntry(1, surveyResultsString);
             StartCoroutine(HideWindow());

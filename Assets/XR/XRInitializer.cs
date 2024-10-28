@@ -2,8 +2,6 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Management;
 using System.Collections;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 public class XRInitializer : MonoBehaviour
 {
@@ -23,20 +21,8 @@ public class XRInitializer : MonoBehaviour
         }
 
 #if UNITY_ANDROID
-        UpdateJsonSettings();
         StartCoroutine(StartXR());
 #endif
-    }
-
-    private void UpdateJsonSettings()
-    {
-        JsonConvert.DefaultSettings = () => new JsonSerializerSettings
-        {
-            ContractResolver = new DefaultContractResolver
-            {
-                IgnoreSerializableInterface = true
-            },
-        };
     }
 
     IEnumerator StartXR()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
-//using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System.Collections;
 using UnityEngine.Events;
 using System.Linq;  // Add this line
@@ -468,16 +468,33 @@ private IEnumerator SubmitCSVCoroutine(string file)
           var transform = value as Transform;
           if (transform != null)
           {
+            // NEW JSON
             var transformData = new TransformData
-              {
-                position = new Vector3Data(transform.position),
-                rotation = new QuaternionData(transform.rotation),
-                localScale = new Vector3Data(transform.localScale)
-              };
-                formattedValue = EscapeForCsv(JsonUtility.ToJson(transformData));
-              }
-              break;
-            default:
+            {
+              position = new Vector3Data(transform.position),
+              rotation = new QuaternionData(transform.rotation),
+              localScale = new Vector3Data(transform.localScale)
+            };
+
+            formattedValue = EscapeForCsv(JsonUtility.ToJson(transformData));
+
+            // OLD JSON
+            /*
+            var settings = new JsonSerializerSettings
+            {
+              ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            };
+
+            formattedValue = EscapeForCsv(JsonConvert.SerializeObject(new
+            {
+              position = new { x = transform.position.x, y = transform.position.y, z = transform.position.z },
+              rotation = new { x = transform.rotation.x, y = transform.rotation.y, z = transform.rotation.z, w = transform.rotation.w },
+              localScale = new { x = transform.localScale.x, y = transform.localScale.y, z = transform.localScale.z }
+            }, settings));
+            */
+          }
+          break;
+        default:
           formattedValue = EscapeForCsv(value.ToString());
           break;
       }
@@ -572,9 +589,7 @@ private IEnumerator SubmitCSVCoroutine(string file)
     Flush();
   }
 
-
-
-
+    #region JSON Helper
 
     [System.Serializable]
     public class TransformData
@@ -615,4 +630,7 @@ private IEnumerator SubmitCSVCoroutine(string file)
             w = quaternion.w;
         }
     }
+
+    #endregion
+
 }
